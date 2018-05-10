@@ -27,38 +27,12 @@ app.use(bodyParser.json());
 // ======================================================================================================= //
 // ROUTER 
 // These links point the server to a series of "route" files.
-// These routes give the server a "map" of how to respond when suers visit or request dat from various URLS
+// These routes give the server a "map" of how to respond when users visit or request data from various URLS
 // ======================================================================================================= //
 
-require("/routes/apiRoutes")(app);
-require(".routes/htmlRoutes")(app);
 
-// Basic route that will send the user first to the AJAX page //
-
-app.get("/", function(req,res) {
-    res.sendFile(path.join(__dirname, "home.html"));
-});
-
-app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
-});
-
-app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
-});
-
-// Data //
-
-var tables = [
-    {
-        name = "". 
-        phoneNumber = "", 
-        email = "", 
-        uniqueId = ""
-    }
-]
-
-
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
 // ========================================================================================= //
 // LISTENER 
